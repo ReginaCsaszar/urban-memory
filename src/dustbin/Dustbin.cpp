@@ -5,8 +5,11 @@
 #include <iostream>
 #include "Dustbin.h"
 
-Dustbin::Dustbin() : color("gray") {}
-Dustbin::Dustbin(std::string color) : color(color) {}
+Dustbin::Dustbin()
+        : color("gray") {}
+
+Dustbin::Dustbin(std::string color)
+        : color(color) {}
 
 Dustbin::~Dustbin() {
     std::cout << "You destroyed a Dustbin." << std::endl;
@@ -35,12 +38,12 @@ void Dustbin::emptyContents() {
     std::cout << "You emptied the Dustbin." << std::endl;
 }
 
-void Dustbin::throwOutGarbage(Garbage waste) {
+void Dustbin::throwOutGarbage(Garbage& waste) {
     houseWasteContent.push_back(waste);
     std::cout << "You dropped Garbage into the Dustbin." << std::endl;
 }
 
-void Dustbin::throwOutPaperGarbage(PaperGarbage waste) {
+void Dustbin::throwOutPaperGarbage(PaperGarbage& waste) {
     if (waste.squeezeState()) {
         paperContent.push_back(waste);
         std::cout << "You dropped PaperGarbage into the Dustbin." << std::endl;
@@ -50,7 +53,7 @@ void Dustbin::throwOutPaperGarbage(PaperGarbage waste) {
     }
 }
 
-void Dustbin::throwOutPlasticGarbage(PlasticGarbage waste) {
+void Dustbin::throwOutPlasticGarbage(PlasticGarbage& waste) {
     if (waste.cleanState()) {
         plasticContent.push_back(waste);
         std::cout << "You dropped PlasticGarbage into the Dustbin." << std::endl;

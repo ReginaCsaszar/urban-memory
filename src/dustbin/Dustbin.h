@@ -8,9 +8,9 @@
 #include <string>
 #include <vector>
 
-#include "../garbage/Garbage.hpp"
-#include "../garbage/PaperGarbage.hpp"
-#include "../garbage/PlasticGarbage.hpp"
+#include "../../src/garbage/Garbage.hpp"
+#include "../../src/garbage/PaperGarbage.hpp"
+#include "../../src/garbage/PlasticGarbage.hpp"
 
 #include "DustbinContentError.hpp"
 
@@ -20,9 +20,9 @@ public:
     Dustbin();
     explicit Dustbin(std::string);
 
-    void throwOutGarbage(Garbage);
-    void throwOutPaperGarbage(PaperGarbage);
-    void throwOutPlasticGarbage(PlasticGarbage);
+    void throwOutGarbage(Garbage&);
+    void throwOutPaperGarbage(PaperGarbage&);
+    void throwOutPlasticGarbage(PlasticGarbage&);
     void emptyContents();
 
     const std::string &getColor() const;

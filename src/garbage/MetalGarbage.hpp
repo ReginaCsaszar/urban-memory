@@ -5,7 +5,6 @@
 #ifndef WASTE_METALGARBAGE_HPP
 #define WASTE_METALGARBAGE_HPP
 
-#endif //WASTE_METALGARBAGE_HPP
 
 #include <iostream>
 #include "Garbage.hpp"
@@ -19,3 +18,5 @@ public:
         std::cout << "You destroyed a MetalGarbage." << std::endl;
     }
 };
+
+#endif //WASTE_METALGARBAGE_HPP

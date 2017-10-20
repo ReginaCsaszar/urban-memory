@@ -7,7 +7,7 @@
 
 
 #include "Dustbin.h"
-#include "../garbage/BottleCap.hpp"
+#include "../../src/garbage/BottleCap.hpp"
 #include "BottleCapException.hpp"
 
 class Dustbin9000 : public Dustbin {
