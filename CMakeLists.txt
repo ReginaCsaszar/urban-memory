@@ -1,19 +1,14 @@
 cmake_minimum_required(VERSION 3.8)
-project(waste)
+project(dustbin)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(lib/googletest-master)
+set(SOURCE_FILES main.cpp)
+add_executable(dustbin ${SOURCE_FILES})
 
-include_directories(lib/googletest-master/googletest/include)
-include_directories(lib/googletest-master/googlemock/include)
+include_directories(waste_recycling)
 
-set(SOURCE_FILES
-        src/garbage/Garbage.hpp src/garbage/PaperGarbage.hpp src/garbage/PlasticGarbage.hpp src/garbage/BottleCap.hpp src/garbage/MetalGarbage.hpp
-        src/dustbin/DustbinContentError.hpp src/dustbin/BottleCapException.hpp
-        src/dustbin/Dustbin.cpp src/dustbin/Dustbin.h src/dustbin/Dustbin9000.cpp src/dustbin/Dustbin9000.h
-        tests/DustbinTest.cpp)
+add_subdirectory(waste_recycling)
+add_subdirectory(waste_recycling_tests)
 
-add_executable(waste ${SOURCE_FILES})
-
-target_link_libraries(waste gtest gtest_main)
+target_link_libraries(dustbin waste_recycling)
